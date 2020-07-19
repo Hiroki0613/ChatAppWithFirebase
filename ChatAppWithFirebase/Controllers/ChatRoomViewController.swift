@@ -11,6 +11,11 @@ import UIKit
 class ChatRoomViewController: UIViewController {
     
     private let cellId = "cellId"
+    private var chatInputAccessoryView: ChatInputAccesoryView = {
+        let view = ChatInputAccesoryView()
+        view.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+        return view
+    } ()
     
     @IBOutlet var chatRoomTableView: UITableView!
     
@@ -23,6 +28,18 @@ class ChatRoomViewController: UIViewController {
         chatRoomTableView.register(UINib(nibName: "ChatRoomTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
         chatRoomTableView.backgroundColor = .rgb(red: 118, green: 140, blue: 180)
     }
+    
+    override var inputAccessoryView: UIView? {
+        get {
+            return chatInputAccessoryView
+        }
+    }
+    
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    
 }
 
 extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
