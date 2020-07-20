@@ -33,6 +33,9 @@ class ChatInputAccesoryView: UIView {
         sendButton.contentHorizontalAlignment = .fill
         sendButton.contentVerticalAlignment = .fill
         sendButton.isEnabled = false
+        
+        chatTextView.text = ""
+        chatTextView.delegate = self
     }
     
     override var intrinsicContentSize: CGSize {
@@ -52,4 +55,20 @@ class ChatInputAccesoryView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
+    
+}
+
+extension ChatInputAccesoryView: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        print("textView.text: ", textView.text)
+        
+        if textView.text.isEmpty {
+            sendButton.isEnabled = false
+        } else {
+            sendButton.isEnabled = true
+        }
+    }
+
 }

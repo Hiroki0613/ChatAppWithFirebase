@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="191" id="Hxq-4y-4lG" customClass="ChatRoomTableViewCell" customModule="ChatAppWithFirebase" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="436" height="191"/>
+            <rect key="frame" x="0.0" y="0.0" width="1408" height="191"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hxq-4y-4lG" id="nzw-Dt-GXL">
-                <rect key="frame" x="0.0" y="0.0" width="436" height="191"/>
+                <rect key="frame" x="0.0" y="0.0" width="1408" height="191"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vince_carter" translatesAutoresizingMaskIntoConstraints="NO" id="IpF-U6-Fwr">
@@ -53,7 +53,7 @@
                 <outlet property="messageTextView" destination="Zdx-Qm-L8q" id="RFK-8p-xzv"/>
                 <outlet property="userImageView" destination="IpF-U6-Fwr" id="VPL-vW-Nd6"/>
             </connections>
-            <point key="canvasLocation" x="-155.07246376811597" y="39.84375"/>
+            <point key="canvasLocation" x="-859.4202898550725" y="39.84375"/>
         </tableViewCell>
     </objects>
     <resources>
