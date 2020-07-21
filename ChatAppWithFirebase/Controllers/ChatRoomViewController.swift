@@ -11,9 +11,10 @@ import UIKit
 class ChatRoomViewController: UIViewController {
     
     private let cellId = "cellId"
-    private var chatInputAccessoryView: ChatInputAccesoryView = {
+    private lazy var chatInputAccessoryView: ChatInputAccesoryView = {
         let view = ChatInputAccesoryView()
         view.frame = .init(x: 0, y: 0, width: view.frame.width, height: 100)
+        view.delegate = self
         return view
     } ()
     
@@ -37,6 +38,13 @@ class ChatRoomViewController: UIViewController {
     
     override var canBecomeFirstResponder: Bool {
         return true
+    }
+    
+    
+}
+extension ChatRoomViewController: ChatInputAccessoryViewDelegate {
+    func tappedSendButton(text: String) {
+        print("ChatInputAccessoryViewDelegate text: ", text)
     }
     
     

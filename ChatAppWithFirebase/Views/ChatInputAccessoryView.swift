@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol ChatInputAccessoryViewDelegate: class {
+    func tappedSendButton(text: String)
+}
+
+
 class ChatInputAccesoryView: UIView {
     
     @IBOutlet var sendButton: UIButton!
     
     @IBOutlet var chatTextView: UITextView!
     
+    weak var delegate: ChatInputAccessoryViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,6 +65,8 @@ class ChatInputAccesoryView: UIView {
     
     
     @IBAction func tappedSendButton(_ sender: Any) {
+        guard let text = chatTextView.text else { return }
+        delegate?.tappedSendButton(text: text)
         print("tapped SendButton")
     }
     
