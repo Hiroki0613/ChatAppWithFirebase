@@ -32,6 +32,9 @@
                         <constraint firstAttribute="width" constant="40" id="pV8-kX-69a"/>
                     </constraints>
                     <state key="normal" image="send-icon"/>
+                    <connections>
+                        <action selector="tappedSendButton:" destination="-1" eventType="touchUpInside" id="Jx5-Bi-RzG"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

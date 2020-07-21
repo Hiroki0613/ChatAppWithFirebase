@@ -58,6 +58,11 @@ class ChatInputAccesoryView: UIView {
     
     
     
+    @IBAction func tappedSendButton(_ sender: Any) {
+        print("tapped SendButton")
+    }
+    
+    
 }
 
 extension ChatInputAccesoryView: UITextViewDelegate {
