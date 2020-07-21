@@ -44,6 +44,11 @@ class ChatInputAccesoryView: UIView {
         chatTextView.delegate = self
     }
     
+    func removeText() {
+        chatTextView.text = ""
+        sendButton.isEnabled = false
+    }
+    
     override var intrinsicContentSize: CGSize {
         return .zero
     }
@@ -67,7 +72,6 @@ class ChatInputAccesoryView: UIView {
     @IBAction func tappedSendButton(_ sender: Any) {
         guard let text = chatTextView.text else { return }
         delegate?.tappedSendButton(text: text)
-        print("tapped SendButton")
     }
     
     
@@ -75,7 +79,6 @@ class ChatInputAccesoryView: UIView {
 
 extension ChatInputAccesoryView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
-        print("textView.text: ", textView.text)
         
         if textView.text.isEmpty {
             sendButton.isEnabled = false

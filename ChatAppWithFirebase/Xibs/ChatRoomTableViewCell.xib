@@ -50,7 +50,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="dateLabel" destination="sSH-N9-JAe" id="6GM-pC-iQa"/>
                 <outlet property="messageTextView" destination="Zdx-Qm-L8q" id="RFK-8p-xzv"/>
+                <outlet property="messageTextViewWithConstraint" destination="hRA-2B-iOe" id="CxH-a5-ddi"/>
                 <outlet property="userImageView" destination="IpF-U6-Fwr" id="VPL-vW-Nd6"/>
             </connections>
             <point key="canvasLocation" x="-859.4202898550725" y="39.84375"/>
