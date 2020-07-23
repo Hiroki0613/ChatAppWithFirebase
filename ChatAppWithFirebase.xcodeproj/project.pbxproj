@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		7F39C6C824C484BB00454A28 /* ChatInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F39C6C724C484BB00454A28 /* ChatInputAccessoryView.xib */; };
 		7F39C6CA24C4862D00454A28 /* ChatInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39C6C924C4862D00454A28 /* ChatInputAccessoryView.swift */; };
 		7F39C6CC24C809CA00454A28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F39C6CB24C809CA00454A28 /* GoogleService-Info.plist */; };
+		7F39C6CE24C9CF8000454A28 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F39C6CD24C9CF8000454A28 /* SignUp.storyboard */; };
+		7F39C6D024C9D6B700454A28 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39C6CF24C9D6B700454A28 /* SignUpViewController.swift */; };
 		9B69B46D4DBEF2C330BD1F94 /* Pods_ChatAppWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FA83C1C886033C2E0CC05C /* Pods_ChatAppWithFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		7F39C6C724C484BB00454A28 /* ChatInputAccessoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatInputAccessoryView.xib; sourceTree = "<group>"; };
 		7F39C6C924C4862D00454A28 /* ChatInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputAccessoryView.swift; sourceTree = "<group>"; };
 		7F39C6CB24C809CA00454A28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F39C6CD24C9CF8000454A28 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		7F39C6CF24C9D6B700454A28 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		817AA64A31CAFC56DE955E3A /* Pods-ChatAppWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.release.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		EC7C6E1D4F6293281B0CF1C1 /* Pods-ChatAppWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,7 +76,6 @@
 				EC7C6E1D4F6293281B0CF1C1 /* Pods-ChatAppWithFirebase.debug.xcconfig */,
 				817AA64A31CAFC56DE955E3A /* Pods-ChatAppWithFirebase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -117,6 +120,7 @@
 			children = (
 				7F39C6B624C1B77500454A28 /* ChatlistViewController.swift */,
 				7F39C6BE24C3337500454A28 /* ChatRoomViewController.swift */,
+				7F39C6CF24C9D6B700454A28 /* SignUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -126,6 +130,7 @@
 			children = (
 				7F39C6B424C1B6B500454A28 /* ChatList.storyboard */,
 				7F39C6BC24C3329E00454A28 /* ChatRoom.storyboard */,
+				7F39C6CD24C9CF8000454A28 /* SignUp.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				7F39C6CC24C809CA00454A28 /* GoogleService-Info.plist in Resources */,
 				7F39C6B524C1B6B500454A28 /* ChatList.storyboard in Resources */,
 				7F39C6C824C484BB00454A28 /* ChatInputAccessoryView.xib in Resources */,
+				7F39C6CE24C9CF8000454A28 /* SignUp.storyboard in Resources */,
 				7F39C6BD24C3329E00454A28 /* ChatRoom.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +283,7 @@
 			files = (
 				7F39C6A124C0981B00454A28 /* AppDelegate.swift in Sources */,
 				7F39C6CA24C4862D00454A28 /* ChatInputAccessoryView.swift in Sources */,
+				7F39C6D024C9D6B700454A28 /* SignUpViewController.swift in Sources */,
 				7F39C6B724C1B77500454A28 /* ChatlistViewController.swift in Sources */,
 				7F39C6BB24C32EE700454A28 /* UIColor-Extention.swift in Sources */,
 				7F39C6BF24C3337500454A28 /* ChatRoomViewController.swift in Sources */,
