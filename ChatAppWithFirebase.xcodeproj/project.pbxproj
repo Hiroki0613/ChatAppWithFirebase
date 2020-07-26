@@ -24,6 +24,8 @@
 		7F39C6CE24C9CF8000454A28 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F39C6CD24C9CF8000454A28 /* SignUp.storyboard */; };
 		7F39C6D024C9D6B700454A28 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39C6CF24C9D6B700454A28 /* SignUpViewController.swift */; };
 		7F39C6D324CC553000454A28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39C6D224CC553000454A28 /* User.swift */; };
+		7F39C6D524CDCABF00454A28 /* UserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F39C6D424CDCABF00454A28 /* UserList.storyboard */; };
+		7F39C6D724CDCCD600454A28 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F39C6D624CDCCD600454A28 /* UserListViewController.swift */; };
 		9B69B46D4DBEF2C330BD1F94 /* Pods_ChatAppWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FA83C1C886033C2E0CC05C /* Pods_ChatAppWithFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		7F39C6CD24C9CF8000454A28 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		7F39C6CF24C9D6B700454A28 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7F39C6D224CC553000454A28 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F39C6D424CDCABF00454A28 /* UserList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserList.storyboard; sourceTree = "<group>"; };
+		7F39C6D624CDCCD600454A28 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		817AA64A31CAFC56DE955E3A /* Pods-ChatAppWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.release.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		EC7C6E1D4F6293281B0CF1C1 /* Pods-ChatAppWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatAppWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-ChatAppWithFirebase/Pods-ChatAppWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +128,7 @@
 				7F39C6B624C1B77500454A28 /* ChatlistViewController.swift */,
 				7F39C6BE24C3337500454A28 /* ChatRoomViewController.swift */,
 				7F39C6CF24C9D6B700454A28 /* SignUpViewController.swift */,
+				7F39C6D624CDCCD600454A28 /* UserListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 				7F39C6B424C1B6B500454A28 /* ChatList.storyboard */,
 				7F39C6BC24C3329E00454A28 /* ChatRoom.storyboard */,
 				7F39C6CD24C9CF8000454A28 /* SignUp.storyboard */,
+				7F39C6D424CDCABF00454A28 /* UserList.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F39C6D524CDCABF00454A28 /* UserList.storyboard in Resources */,
 				7F39C6C124C33D1400454A28 /* ChatRoomTableViewCell.xib in Resources */,
 				7F39C6AD24C0981B00454A28 /* LaunchScreen.storyboard in Resources */,
 				7F39C6AA24C0981B00454A28 /* Assets.xcassets in Resources */,
@@ -297,6 +304,7 @@
 				7F39C6D024C9D6B700454A28 /* SignUpViewController.swift in Sources */,
 				7F39C6B724C1B77500454A28 /* ChatlistViewController.swift in Sources */,
 				7F39C6BB24C32EE700454A28 /* UIColor-Extention.swift in Sources */,
+				7F39C6D724CDCCD600454A28 /* UserListViewController.swift in Sources */,
 				7F39C6D324CC553000454A28 /* User.swift in Sources */,
 				7F39C6BF24C3337500454A28 /* ChatRoomViewController.swift in Sources */,
 				7F39C6C324C33E5600454A28 /* ChatRoomTableViewCell.swift in Sources */,
