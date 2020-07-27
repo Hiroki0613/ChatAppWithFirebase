@@ -19,8 +19,14 @@ class UserListViewController: UIViewController {
     
     @IBOutlet var startChatButton: UIButton!
     
+    
+    @IBAction func tappedCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     private let cellId = "cellId"
     private var users = [User]()
+    private var selectedUser: User?
     
     
     override func viewDidLoad() {
@@ -29,9 +35,33 @@ class UserListViewController: UIViewController {
         userListTableView.delegate = self
         userListTableView.dataSource = self
         startChatButton.layer.cornerRadius = 15
+        startChatButton.isEnabled = false
+        startChatButton.addTarget(self, action: #selector(tappedStartChatButton), for: .touchUpInside)
         
         navigationController?.navigationBar.barTintColor = .rgb(red: 39, green: 49, blue: 69)
         fetchUserInfoFromFirestore()
+    }
+    
+    @objc func tappedStartChatButton() {
+        print("tappedStartChatButton")
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let partnerUid = self.selectedUser?.uid else { return }
+        let members = [uid, partnerUid]
+        
+        let docData = [
+            "membars": members,
+            "latestMessageId":"",
+            "createdAt": Timestamp()
+        ] as [String: Any]
+        
+        Firestore.firestore().collection("chatRooms").addDocument(data: docData) { (err) in
+            if let err = err {
+                print("ChatRoom情報の保存に失敗しました。 \(err)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+            print("ChatRoom情報の保存に成功しました。")
+        }
     }
     
     private func fetchUserInfoFromFirestore() {
@@ -44,6 +74,7 @@ class UserListViewController: UIViewController {
             snapshots?.documents.forEach({ (snapshot) in
                 let data = snapshot.data()
                 let user = User.init(dic: data)
+                user.uid = snapshot.documentID
                 
                 guard let uid = Auth.auth().currentUser?.uid else { return }
                 
@@ -71,6 +102,13 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = userListTableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserListTableViewCell
         cell.user = users[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        startChatButton.isEnabled = true
+        let user = users[indexPath.row]
+        self.selectedUser = user
+        
     }
 }
 
