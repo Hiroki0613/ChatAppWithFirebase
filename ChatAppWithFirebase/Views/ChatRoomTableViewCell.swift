@@ -10,12 +10,21 @@ import UIKit
 
 class ChatRoomTableViewCell: UITableViewCell {
     
-    var messageText: String? {
+    var message: Message? {
         didSet {
-            guard let text = messageText else { return }
-            let width = estimateFrameForTextView(text: text).width + 20
-            messageTextViewWithConstraint.constant = width
-            messageTextView.text = text
+//            guard let text = messageText else { return }
+//            let width = estimateFrameForTextView(text: text).width + 20
+//            messageTextViewWithConstraint.constant = width
+//            messageTextView.text = text
+            if let message = message {
+                messageTextView.text = message.message
+                let width = estimateFrameForTextView(text: message.message).width + 20
+                messageTextViewWithConstraint.constant = width
+                
+                dateLabel.text = dataFormatterForDateLabel(date: message.createdAt.dateValue())
+//                userImageView.image = 
+            }
+            
         }
     }
     
@@ -44,4 +53,13 @@ class ChatRoomTableViewCell: UITableViewCell {
         
         return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], context: nil)
     }
+    
+    private func dataFormatterForDateLabel(date: Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "ja_JP")
+        return formatter.string(from: date)
+    }
+
 }

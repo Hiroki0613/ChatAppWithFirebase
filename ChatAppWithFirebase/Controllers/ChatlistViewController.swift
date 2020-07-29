@@ -63,6 +63,7 @@ class ChatListViewController: UIViewController {
     private func handleAddedDocumentChange(documentChange: DocumentChange) {
         let dic = documentChange.document.data()
         let chatroom = ChatRoom(dic: dic)
+        chatroom.documentId = documentChange.document.documentID
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
         chatroom.members.forEach { (memberUid) in
@@ -161,7 +162,9 @@ extension ChatListViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tapped table view")
         let storyboard = UIStoryboard.init(name: "ChatRoom", bundle: nil)
-        let chatRoomViewController = storyboard.instantiateViewController(withIdentifier: "ChatRoomViewController")
+        let chatRoomViewController = storyboard.instantiateViewController(withIdentifier: "ChatRoomViewController") as! ChatRoomViewController
+        chatRoomViewController.user = user
+        chatRoomViewController.chatroom = chatrooms[indexPath.row]
         navigationController?.pushViewController(chatRoomViewController, animated: true)
     }
 }
@@ -214,8 +217,8 @@ class ChatListTableViewCell: UITableViewCell {
     
     private func dataFormatterForDateLabel(date: Date) -> String{
         let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        formatter.timeStyle = .none
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
         formatter.locale = Locale(identifier: "ja_JP")
         return formatter.string(from: date)
     }
