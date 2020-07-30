@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Nuke
 
 class ChatRoomTableViewCell: UITableViewCell {
     
@@ -17,14 +18,14 @@ class ChatRoomTableViewCell: UITableViewCell {
 //            let width = estimateFrameForTextView(text: text).width + 20
 //            messageTextViewWithConstraint.constant = width
 //            messageTextView.text = text
-            if let message = message {
-                partnerMessageTextView.text = message.message
-                let width = estimateFrameForTextView(text: message.message).width + 20
-                messageTextViewWithConstraint.constant = width
-                
-                partnerDateLabel.text = dataFormatterForDateLabel(date: message.createdAt.dateValue())
-//                userImageView.image = 
-            }
+//            if let message = message {
+//                partnerMessageTextView.text = message.message
+//                let width = estimateFrameForTextView(text: message.message).width + 20
+//                messageTextViewWithConstraint.constant = width
+//
+//                partnerDateLabel.text = dataFormatterForDateLabel(date: message.createdAt.dateValue())
+////                userImageView.image =
+//            }
             
         }
     }
@@ -36,6 +37,7 @@ class ChatRoomTableViewCell: UITableViewCell {
     @IBOutlet var myDateLabel: UILabel!
     
     @IBOutlet var messageTextViewWithConstraint: NSLayoutConstraint!
+    @IBOutlet var myMessageTextViewWithConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +45,7 @@ class ChatRoomTableViewCell: UITableViewCell {
         
         userImageView.layer.cornerRadius = 30
         partnerMessageTextView.layer.cornerRadius = 15
+        myMessageTextView.layer.cornerRadius = 15
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -60,6 +63,15 @@ class ChatRoomTableViewCell: UITableViewCell {
             
             myMessageTextView.isHidden = false
             myDateLabel.isHidden = false
+            
+            if let message = message {
+                myMessageTextView.text = message.message
+                let width = estimateFrameForTextView(text: message.message).width + 20
+                myMessageTextViewWithConstraint.constant = width
+                
+                myDateLabel.text = dataFormatterForDateLabel(date: message.createdAt.dateValue())
+            }
+            
         } else {
             partnerMessageTextView.isHidden = false
             partnerDateLabel.isHidden = false
@@ -67,6 +79,18 @@ class ChatRoomTableViewCell: UITableViewCell {
             
             myMessageTextView.isHidden = true
             myDateLabel.isHidden = true
+            if let urlString = message?.partnerUser?.profileImageUrl, let url = URL(string: urlString) {
+                Nuke.loadImage(with: url, into: userImageView)
+            }
+            
+            if let message = message {
+                partnerMessageTextView.text = message.message
+                let width = estimateFrameForTextView(text: message.message).width + 20
+                messageTextViewWithConstraint.constant = width
+                
+                partnerDateLabel.text = dataFormatterForDateLabel(date: message.createdAt.dateValue())
+            }
+            
         }
     }
     
@@ -75,7 +99,7 @@ class ChatRoomTableViewCell: UITableViewCell {
         let size = CGSize(width: 200, height: 1000)
         let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
         
-        return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)], context: nil)
+        return NSString(string: text).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)], context: nil)
     }
     
     private func dataFormatterForDateLabel(date: Date) -> String{

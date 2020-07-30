@@ -29,7 +29,7 @@
                             <constraint firstAttribute="width" constant="250" id="hRA-2B-iOe"/>
                         </constraints>
                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSH-N9-JAe">
@@ -38,14 +38,14 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="60v-lC-2t9">
+                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここにメッセージが入ります。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="60v-lC-2t9">
                         <rect key="frame" x="304" y="25" width="225" height="141"/>
                         <color key="backgroundColor" red="0.60392156862745094" green="0.8784313725490196" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="225" id="sup-9B-xlH"/>
                         </constraints>
                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKI-GT-4jQ">
@@ -75,6 +75,7 @@
                 <outlet property="messageTextViewWithConstraint" destination="hRA-2B-iOe" id="CxH-a5-ddi"/>
                 <outlet property="myDateLabel" destination="gKI-GT-4jQ" id="Qq1-Nj-Iw7"/>
                 <outlet property="myMessageTextView" destination="60v-lC-2t9" id="GGd-Gb-qbw"/>
+                <outlet property="myMessageTextViewWithConstraint" destination="sup-9B-xlH" id="VrB-83-Wet"/>
                 <outlet property="partnerDateLabel" destination="sSH-N9-JAe" id="6GM-pC-iQa"/>
                 <outlet property="partnerMessageTextView" destination="Zdx-Qm-L8q" id="RFK-8p-xzv"/>
                 <outlet property="userImageView" destination="IpF-U6-Fwr" id="VPL-vW-Nd6"/>

@@ -90,6 +90,8 @@ extension ChatRoomViewController: ChatInputAccessoryViewDelegate {
                 case .added:
                     let dic = documentChange.document.data()
                     let message = Message(dic: dic)
+                    message.partnerUser = self.chatroom?.partnerUser
+                    
                     self.messages.append(message)
                     self.chatRoomTableView.reloadData()
                     
