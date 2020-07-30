@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="191" id="Hxq-4y-4lG" customClass="ChatRoomTableViewCell" customModule="ChatAppWithFirebase" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="1408" height="191"/>
+            <rect key="frame" x="0.0" y="0.0" width="549" height="191"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hxq-4y-4lG" id="nzw-Dt-GXL">
-                <rect key="frame" x="0.0" y="0.0" width="1408" height="191"/>
+                <rect key="frame" x="0.0" y="0.0" width="549" height="191"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vince_carter" translatesAutoresizingMaskIntoConstraints="NO" id="IpF-U6-Fwr">
@@ -22,7 +22,7 @@
                             <constraint firstAttribute="width" secondItem="IpF-U6-Fwr" secondAttribute="height" multiplier="1:1" id="C8x-hE-uAA"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="メッセージがここに入ります" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdx-Qm-L8q">
+                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="メッセージがここに入ります" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdx-Qm-L8q">
                         <rect key="frame" x="105" y="25" width="250" height="141"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -33,29 +33,53 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSH-N9-JAe">
-                        <rect key="frame" x="360" y="135" width="43" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="360" y="139" width="36.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="60v-lC-2t9">
+                        <rect key="frame" x="304" y="25" width="225" height="141"/>
+                        <color key="backgroundColor" red="0.60392156862745094" green="0.8784313725490196" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="225" id="sup-9B-xlH"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKI-GT-4jQ">
+                        <rect key="frame" x="262" y="145" width="34" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="60v-lC-2t9" firstAttribute="top" secondItem="nzw-Dt-GXL" secondAttribute="top" constant="25" id="07L-oc-7WX"/>
                     <constraint firstItem="Zdx-Qm-L8q" firstAttribute="top" secondItem="nzw-Dt-GXL" secondAttribute="top" constant="25" id="FwK-YL-gBG"/>
+                    <constraint firstAttribute="bottom" secondItem="gKI-GT-4jQ" secondAttribute="bottom" constant="30" id="Hhn-n0-Mlf"/>
                     <constraint firstItem="sSH-N9-JAe" firstAttribute="leading" secondItem="Zdx-Qm-L8q" secondAttribute="trailing" constant="5" id="Kcg-Ll-cWc"/>
+                    <constraint firstItem="60v-lC-2t9" firstAttribute="leading" secondItem="gKI-GT-4jQ" secondAttribute="trailing" constant="8" id="VHX-wx-y33"/>
                     <constraint firstItem="IpF-U6-Fwr" firstAttribute="centerY" secondItem="nzw-Dt-GXL" secondAttribute="centerY" id="VJW-12-ruh"/>
                     <constraint firstItem="Zdx-Qm-L8q" firstAttribute="leading" secondItem="IpF-U6-Fwr" secondAttribute="trailing" constant="10" id="bWq-Kf-wi1"/>
+                    <constraint firstAttribute="bottom" secondItem="60v-lC-2t9" secondAttribute="bottom" constant="25" id="dnL-BG-YHu"/>
+                    <constraint firstAttribute="trailing" secondItem="60v-lC-2t9" secondAttribute="trailing" constant="20" id="iVh-oQ-2Ja"/>
                     <constraint firstItem="IpF-U6-Fwr" firstAttribute="leading" secondItem="nzw-Dt-GXL" secondAttribute="leadingMargin" constant="15" id="oh2-Ws-xzz"/>
                     <constraint firstAttribute="bottom" secondItem="Zdx-Qm-L8q" secondAttribute="bottom" constant="25" id="qaj-Ii-qpb"/>
                     <constraint firstItem="Zdx-Qm-L8q" firstAttribute="bottom" secondItem="sSH-N9-JAe" secondAttribute="bottom" constant="10" id="zpX-LH-7Jb"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="dateLabel" destination="sSH-N9-JAe" id="6GM-pC-iQa"/>
-                <outlet property="messageTextView" destination="Zdx-Qm-L8q" id="RFK-8p-xzv"/>
                 <outlet property="messageTextViewWithConstraint" destination="hRA-2B-iOe" id="CxH-a5-ddi"/>
+                <outlet property="myDateLabel" destination="gKI-GT-4jQ" id="Qq1-Nj-Iw7"/>
+                <outlet property="myMessageTextView" destination="60v-lC-2t9" id="GGd-Gb-qbw"/>
+                <outlet property="partnerDateLabel" destination="sSH-N9-JAe" id="6GM-pC-iQa"/>
+                <outlet property="partnerMessageTextView" destination="Zdx-Qm-L8q" id="RFK-8p-xzv"/>
                 <outlet property="userImageView" destination="IpF-U6-Fwr" id="VPL-vW-Nd6"/>
             </connections>
-            <point key="canvasLocation" x="-859.4202898550725" y="39.84375"/>
+            <point key="canvasLocation" x="-1481.8840579710145" y="39.84375"/>
         </tableViewCell>
     </objects>
     <resources>

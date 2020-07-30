@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChatRoomTableViewCell: UITableViewCell {
     
@@ -17,11 +18,11 @@ class ChatRoomTableViewCell: UITableViewCell {
 //            messageTextViewWithConstraint.constant = width
 //            messageTextView.text = text
             if let message = message {
-                messageTextView.text = message.message
+                partnerMessageTextView.text = message.message
                 let width = estimateFrameForTextView(text: message.message).width + 20
                 messageTextViewWithConstraint.constant = width
                 
-                dateLabel.text = dataFormatterForDateLabel(date: message.createdAt.dateValue())
+                partnerDateLabel.text = dataFormatterForDateLabel(date: message.createdAt.dateValue())
 //                userImageView.image = 
             }
             
@@ -29,8 +30,10 @@ class ChatRoomTableViewCell: UITableViewCell {
     }
     
     @IBOutlet var userImageView: UIImageView!
-    @IBOutlet var messageTextView: UITextView!
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var partnerMessageTextView: UITextView!
+    @IBOutlet var myMessageTextView: UITextView!
+    @IBOutlet var partnerDateLabel: UILabel!
+    @IBOutlet var myDateLabel: UILabel!
     
     @IBOutlet var messageTextViewWithConstraint: NSLayoutConstraint!
     
@@ -39,11 +42,32 @@ class ChatRoomTableViewCell: UITableViewCell {
         backgroundColor = .clear
         
         userImageView.layer.cornerRadius = 30
-        messageTextView.layer.cornerRadius = 15
+        partnerMessageTextView.layer.cornerRadius = 15
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        checkWhichUserMessage()
+    }
+    
+    private func checkWhichUserMessage() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        if uid == message?.uid {
+            partnerMessageTextView.isHidden = true
+            partnerDateLabel.isHidden = true
+            userImageView.isHidden = true
+            
+            myMessageTextView.isHidden = false
+            myDateLabel.isHidden = false
+        } else {
+            partnerMessageTextView.isHidden = false
+            partnerDateLabel.isHidden = false
+            userImageView.isHidden = false
+            
+            myMessageTextView.isHidden = true
+            myDateLabel.isHidden = true
+        }
     }
     
     
